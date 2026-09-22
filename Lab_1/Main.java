@@ -16,19 +16,20 @@ public class Main {
    double res = 0;
    int n = Integer.parseInt(input.nextLine());
 
+   boolean flag = true;
 
    switch(n){
     case 1: {  res = _num1 + _num2; break; }
     case 2: {  res = _num1 - _num2; break; }
     case 3: {  res = _num1 * _num2; break; }
     case 4: {
-        if(_num2 == 0) { System.out.print("Error, divisor cannot be zero"); break; }
+        if(_num2 == 0) { System.out.print("Error, divisor cannot be zero");        flag = false; break; }
         res = _num1 / _num2; 
-
     }
    }
-   System.out.print(res);
-
+   if(flag){
+   System.out.print("Result: "+ res);
+   }
    input.close();
 }
 }
