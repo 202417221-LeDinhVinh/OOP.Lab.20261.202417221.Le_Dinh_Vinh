@@ -1,35 +1,50 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
-   public static void main(String[] args) {
-   Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 
-   System.out.print("Input first number: ");
-   String num1 = input.nextLine();
-   double _num1 = Double.parseDouble(num1);
+        System.out.print("Input first number: ");
+        String strNum1 = input.nextLine();
+        double num1 = Double.parseDouble(strNum1);
 
-   System.out.print("Input second number: ");
-   String num2 = input.nextLine();
-   double _num2 = Double.parseDouble(num2);
+        System.out.print("Input second number: ");
+        String strNum2 = input.nextLine();
+        double num2 = Double.parseDouble(strNum2);
 
-   System.out.print("Input 1 for addition,\n 2 for Difference, \n 3 for multiplication \n 4 for division");
-   double res = 0;
-   int n = Integer.parseInt(input.nextLine());
+        System.out.println("Input 1 for addition, 2 for subtraction, 3 for multiplication, 4 for division:");
+        int choice = Integer.parseInt(input.nextLine());
 
-   boolean flag = true;
+        double res = 0;
+        boolean isValid = true;
 
-   switch(n){
-    case 1: {  res = _num1 + _num2; break; }
-    case 2: {  res = _num1 - _num2; break; }
-    case 3: {  res = _num1 * _num2; break; }
-    case 4: {
-        if(_num2 == 0) { System.out.print("Error, divisor cannot be zero");        flag = false; break; }
-        res = _num1 / _num2; 
+        switch(choice) {
+            case 1: 
+                res = num1 + num2; 
+                break;
+            case 2: 
+                res = num1 - num2; 
+                break;
+            case 3: 
+                res = num1 * num2; 
+                break;
+            case 4: 
+                if(num2 == 0) { 
+                    System.out.println("Error, divisor cannot be zero");
+                    isValid = false;
+                } else {
+                    res = num1 / num2; 
+                }
+                break;
+            default:
+                System.out.println("Error, invalid operation choice");
+                isValid = false;
+        }
+
+        if (isValid) {
+            System.out.println("Result: " + res);
+        }
+
+        input.close();
     }
-   }
-   if(flag){
-   System.out.print("Result: "+ res);
-   }
-   input.close();
-}
 }
