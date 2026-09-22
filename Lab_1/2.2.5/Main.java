@@ -12,7 +12,7 @@ public class Main {
         String strNum2 = input.nextLine();
         double num2 = Double.parseDouble(strNum2);
 
-        System.out.println("Input 1 for addition, 2 for subtraction, 3 for multiplication, 4 for division:");
+        System.out.println("Input 1 for addition, 2 for subtraction, 3 for multiplication, 4 for division: \n");
         int choice = Integer.parseInt(input.nextLine());
 
         double res = 0;

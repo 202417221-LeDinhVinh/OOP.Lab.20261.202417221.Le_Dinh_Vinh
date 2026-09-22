@@ -1,0 +1,5 @@
+Question 1: What happens if users choose "Cancel"?
+Answer: Hàm showConfirmDialog sẽ trả về giá trị đại diện cho CANCEL_OPTION. Tuy nhiên, do đoạn mã hiện tại dùng toán tử ba ngôi chỉ kiểm tra (option == JOptionPane.YES_OPTION ? "Yes" : "No"), máy tính sẽ đánh giá điều kiện này là sai và in ra thông báo "You've chosen: No".
+
+Question 2: How to customize the options to users, e.g. "I do" and "I don't"?
+Answer: Thay vì dùng hàm showConfirmDialog, bạn cần chuyển sang dùng hàm JOptionPane.showOptionDialog(). Hàm này cho phép truyền vào một mảng chứa các lựa chọn tùy chỉnh (Ví dụ: Object[] customOptions = {"I do", "I don't"};) để thay đổi chữ hiển thị trên các nút bấm.
